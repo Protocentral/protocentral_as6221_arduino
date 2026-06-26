@@ -1,0 +1,36 @@
+name: Arduino Lint
+
+on:
+  push:
+    paths:
+      - "library.properties"
+      - "keywords.txt"
+      - "src/**"
+      - "examples/**"
+      - ".github/workflows/arduino-lint.yml"
+  pull_request:
+    paths:
+      - "library.properties"
+      - "keywords.txt"
+      - "src/**"
+      - "examples/**"
+      - ".github/workflows/arduino-lint.yml"
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Arduino Lint
+        uses: arduino/arduino-lint-action@v1
+        with:
+          library-manager: update
+          # "specification" (the default), not "strict": the library name
+          # "ProtoCentral AS6221" contains a space, which the strict-only rule
+          # LP015 forbids. The name matches the rest of the ProtoCentral library
+          # family, so that rule must not be treated as a hard error.
+          compliance: specification
+          project-type: library

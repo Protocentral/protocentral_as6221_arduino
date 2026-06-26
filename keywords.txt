@@ -1,0 +1,30 @@
+#######################################
+# Syntax Coloring Map - ProtoCentral AS6221
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+ProtocentralAS6221	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+readTemperatureC	KEYWORD2
+readTemperatureF	KEYWORD2
+readConfig	KEYWORD2
+writeConfig	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+AS6221_DEFAULT_ADDRESS	LITERAL1
+AS6221_REG_TVAL	LITERAL1
+AS6221_REG_CONFIG	LITERAL1
+AS6221_REG_TLOW	LITERAL1
+AS6221_REG_THIGH	LITERAL1
+AS6221_LSB_C	LITERAL1
